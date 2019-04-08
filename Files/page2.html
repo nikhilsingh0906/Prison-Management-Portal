@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<style>
+	marquee{
+		color:steelblue;
+		cursor:auto;
+		font-size:50px;
+		}
+	ul {
+    list-style-type: none;
+    margin: 30px;
+    padding:0px;
+    overflow: hidden;
+    background-color: orange;
+    border-radius:7px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px ;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: blue;
+}
+
+.active {
+background-color:black;
+}
+img{
+  	display:block;
+  	margin-left:auto;
+  	margin-right:auto;
+
+  	}	
+html,body {
+	margin: 0;
+	padding: 0;
+	
+}
+.slider {
+	width: 850px;
+	margin: 2em auto;
+	float:left;
+	border-radius:10px;
+	margin-left:10px;
+	width:600px;
+	
+}
+
+.slider-wrapper {
+	width: 100%;
+	height: 400px;
+	position: relative;
+		border-radius:10px;
+}
+
+.slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 2s linear;
+		border-radius:10px;
+}
+
+.slider-wrapper > .slide:first-child {
+	opacity: 1;
+}
+    fieldset{
+ 		color:black;
+ 		background-color:white;
+ 		border-radius:10px;
+ 		margin-left:250px; 
+ 		font-size:150%;
+ 		
+ 		
+    
+    }
+     			
+</style>
+<title>home_page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<img src="/home/saurav/app_project/national_emblem" height="150px" width="150px" align="center"><br>
+
+
+<ul><br>
+  <li><a href="page2.html">Home</a></li>
+  <li><a href="view_jailer.html">Jailer</a></li>
+  <li><a  href="prisoner_information.html">Prisoner</a></li>
+  <li><a href="visitor.html">Visitor</a></li>
+  <li><a  href="add_employee.html">Add Employee</a></li>
+  <li><a  href="activities.html">Activities</a></li>
+  <li><a  href="signin.html">Logout</a></li>
+</ul><br>
+<marquee behaviour="scroll" scrollamount="12" direction="right">WELCOME TO PRISON MANAGEMENT SYSTEM</marquee>
+<br>
+<div class="slider" id="main-slider" align="left"><!-- outermost container element -->
+	   <div class="slider-wrapper"><!-- innermost wrapper element -->
+		<img src=/home/saurav/Downloads/police2.jpeg alt="First" class="slide" align="left"/><!-- slides -->
+		<img src=/home/saurav/Downloads/police3.jpeg alt="Second" class="slide" />
+		<img src=/home/saurav/Downloads/police3.jpeg
+/home/saurav/Downloads/police1.jpeg alt="Third" class="slide" />
+        <img src=/home/saurav/Downloads/pic2.jpg alt="Third" class="slide" />
+        <img src=/home/saurav/Downloads/ooo4.jpeg alt="Third" class="slide" />
+                <img src="/home/saurav/Downloads/pic8.jpg"alt="Third" class="slide" />
+	   </div>
+</div>
+
+<br><br><br><br><br><fieldset>
+	<p>Welcome to PRISON MANAGEMENT SYSTEM.The prison information section has been designed to make it easy to find prison and understand how they work .we have developed an online tool that will help you locate a prison and find details.The basic objective of the website is to provide reliable information about department of prison.The system enable an Administrator to provide services to users and here the administrator can add and upload information, update, view the record added. </p></fieldset>
+
+
+
+
+
+<script>
+(function() {
+	
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+	
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.previous = this.el.querySelector( ".slider-previous" );
+			this.next = this.el.querySelector( ".slider-next" );
+			this.index = 0;
+			this.total = this.slides.length;
+			this.timer = null;
+			
+			this.action();
+			this.stopStart();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+			
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		action: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.index++;
+				if( self.index == self.slides.length ) {
+					self.index = 0;
+				}
+				self._slideTo( self.index );
+				
+			}, 3000);
+		},
+		stopStart: function() {
+			var self = this;
+			self.el.addEventListener( "mouseover", function() {
+				clearInterval( self.timer );
+				self.timer = null;
+				
+			}, false);
+			self.el.addEventListener( "mouseout", function() {
+				self.action();
+				
+			}, false);
+		}
+		
+		
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		
+		var slider = new Slideshow( "#main-slider" );
+		
+	});
+	
+	
+})();	
+</script>
+</body>
+</html>
+

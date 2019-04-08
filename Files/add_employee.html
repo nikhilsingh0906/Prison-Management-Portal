@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<style>
+	h1{
+		color:blue;
+		cursor:auto;
+		text-align:center;
+		}
+	input{
+		
+		input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 10px ;
+    box-sizing: border-box;
+    border: none;
+    background-color:#F5F5F5;
+    color: black;
+}
+		
+		
+				}
+	select{
+		border-radius:9px;
+		border-style:10px solid red;
+		background-color:white;
+		padding:10px;
+		}
+	ul {
+    list-style-type: none;
+    margin: 30px;
+    padding: 0;
+    overflow: hidden;
+ 	border-radius:7px;
+    background-color: orange;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: #808080;
+}
+
+.active {
+background-color:black;
+}
+	p{
+		text-align:center;
+		color:solid black;
+		text-decoration:underline;
+		font-size:150%;
+		}	
+		img{
+  	display:block;
+  	margin-left:auto;
+  	margin-right:auto;
+
+  	}
+  	button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: underline;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+						
+		
+		
+</style>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=2">
+<body >
+<img src="/home/saurav/app_project/national_emblem" height="150px" width="150px">
+<h1>PRISON MANAGEMENT SYSTEM</H1>
+
+
+<ul><br>
+  <li><a  href="page2.html">Home</a></li>
+  <li><a  href="view_jailer.html">Jailer</a></li>
+  <li><a href="prisoner_information.html">Prisoner</a></li>
+  <li><a  href="visitor.html">Visitor</a></li>
+  <li><a href="add_employee.html">Add Employee</a></li>
+  <li><a  href="activities.html">Activities</a></li>
+  <li><a href="signin.html">Logout</a></li>
+</ul><img src="/home/saurav/Downloads/ooo1.jpg" height="550px" width="550px" align="left">
+	<p>ADD EMPLOYEE</p>
+	<br>
+	<form method="post" action=""  style = "text-align: center;">
+	 Name <input name="name" type="text" size="30" required></input><br><br>
+
+	  Gender: &nbsp;&nbsp;&nbsp;&nbsp;
+	  Male<input name="gender" type="radio">
+	 Female <input name="gender" type="radio"></input><br><br><br><br>
+	  Qualification &nbsp; &nbsp; &nbsp; &nbsp;<select type="select">
+	    <option>Intermediate</option>
+	    <option>Graduation</option>
+	    <option>Post Graduation</option>
+
+	    </select><br><br><br><br>
+	     Address<input name="address" type="text" size="30" required></input><br><br><br>
+		     Salary<input name="salary" type="text" size="30" required></input><br><br><br>
+	    		     Post<input name="post" type="text" size="30" required></input><br><br><br>
+	    <button class="button button1"type="submit" value="submit">Submit</button>
+              	    
+	     <button class="button button1"type="reset" value="reset">Reset</button>
+	    </form>
+	    
+	    </body>
+</html>
+

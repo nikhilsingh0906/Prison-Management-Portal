@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<style>
+	h1{
+		color:steelblue;
+		cursor:auto;
+		text-align:center;
+		}
+	p{
+		color:black;
+		text-decoration:underline;
+		text-align:center;
+		cursor:pointer;
+		font-size:30px;
+		}
+		p.a{
+			color:black;
+			text-decoration:unerline;
+			float:center;
+			}
+	ul {
+    list-style-type: none;
+    margin: 20px;
+    padding: 0;
+    overflow: hidden;
+    background-color: orange;
+    border-radius:7px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding:  20px 10px;
+    text-decoration:underline;
+}
+
+a:hover{
+    background-color: grey;
+}
+
+.active {
+background-color:white;
+}	
+img{
+  	display:block;
+  	margin-left:auto;
+  	margin-right:auto;
+
+  	}	
+html,body {
+	margin: 0;
+	padding: 0;
+	
+}
+.slider {
+	width: 850px;
+	margin: 2em auto;
+	float:left;
+	border-radius:10px;
+	margin-left:10px;
+	width:600px;
+	
+}
+
+.slider-wrapper {
+	width: 100%;
+	height: 400px;
+	position: relative;
+		border-radius:10px;
+}
+
+.slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 2s linear;
+		border-radius:10px;
+}
+
+.slider-wrapper > .slide:first-child {
+	opacity: 1;
+}
+    fieldset{
+ 		color:black;
+ 		background-color:white;
+ 		border-radius:10px;
+ 		margin-left:250px; 
+ 		font-size:150%;
+ 		
+ 		
+    
+    }
+     			
+
+		
+</style>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+<img src="/home/saurav/app_project/national_emblem" height="150px" width="150px">
+<h1>PRISON MANAGEMENT SYSTEM</H1>
+<div class="w3-container">
+  
+</div>
+
+<ul><br>
+ <li> <a href="page2.html">Home</a></li>
+  <li><a href="view_jailer.html">Jailer</a></li>
+  <li><a href="prisoner_information.html">Prisoner</a></li>
+  <li><a href="visitor.html">Visitor</a></li>
+  <li><a href="add_employee.html">Add Employee</a></li>
+  <li><a  href="activities.html">Activities</a></li>
+  <li><a href="signin.html">Logout</a></li>
+  	
+<br><br><br></ul><br>
+	<p id="a">Activities<p>
+<div class="slider" id="main-slider" align="left" ><!-- outermost container element -->
+	   <div class="slider-wrapper"><!-- innermost wrapper element -->
+		<img src="/home/saurav/Downloads/pic8.jpg" alt="First" class="slide" /><!-- slides -->
+		<img src="/home/saurav/Downloads/pic6.jpeg" alt="Second" class="slide"/>
+		<img src="/home/saurav/Downloads/pic5.jpg" alt="Third" class="slide"/>
+        <img src="/home/saurav/Downloads/ooo3.JPG"alt="Third" class="slide"  />
+        
+	   </div>
+</div>
+
+	<fieldset>According to Indian Constitution,
+		A range of activities and opportunities are offered to prisoners while they are in custody. These can include:
+employment (e.g. bakery, laundry, kitchen, woodwork shop, tailorshop, farming, gardening, community work, cleaning);
+education (a range of educational opportunities are provided)
+programs (including targeted offence-related programs as well as other programs to assist prisoners);
+sport and recreation (including a range of individual and team-based activities and competitions);
+hobbies;
+library (materials and services provided by the State Library of Tasmania).
+
+	</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function() {
+	
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+	
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.previous = this.el.querySelector( ".slider-previous" );
+			this.next = this.el.querySelector( ".slider-next" );
+			this.index = 0;
+			this.total = this.slides.length;
+			this.timer = null;
+			
+			this.action();
+			this.stopStart();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+			
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		action: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.index++;
+				if( self.index == self.slides.length ) {
+					self.index = 0;
+				}
+				self._slideTo( self.index );
+				
+			}, 3000);
+		},
+		stopStart: function() {
+			var self = this;
+			self.el.addEventListener( "mouseover", function() {
+				clearInterval( self.timer );
+				self.timer = null;
+				
+			}, false);
+			self.el.addEventListener( "mouseout", function() {
+				self.action();
+				
+			}, false);
+		}
+		
+		
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		
+		var slider = new Slideshow( "#main-slider" );
+		
+	});
+	
+	
+})();	
+</script>
+
+
+</body>
+</html>
+
