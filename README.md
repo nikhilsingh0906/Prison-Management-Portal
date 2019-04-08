@@ -1,2 +1,2 @@
 # Prison-Management-Portal
-This is the portal which is created by me for Prison Management. It has a functionality for admin and staff.
+A prisoners and employees data management system implemented using HTML, CSS, JavaScript and PHP having functionality of admin and staff.
